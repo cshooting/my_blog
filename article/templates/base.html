@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shooting Blog</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+    <link rel="stylesheet" href="http://picturebag.qiniudn.com/blog.css">
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/snow.js'%}"></script>
+    <script>
+        $(function(){
+            $.fn.snow({
+                minSize: 5,		//雪花的最小尺寸
+                maxSize: 40, 	//雪花的最大尺寸
+                newOn: 100		//雪花出现的频率 这个数值越小雪花越多
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="layout" class="pure-g">
+        <div class="sidebar pure-u-1 pure-u-md-1-4">
+            <div class="header">
+                <h1 class="brand-title">Shooting Blog</h1>
+                <h2 class="brand-tagline">长路漫漫唯剑作伴</h2>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a class="pure-button" href="https://github.com/cshooting">Github</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="https://www.zhihu.com/people/chang-lu-man-man-wei-jian-zuo-ban-33/activities">知乎</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="content pure-u-1 pure-u-md-3-4">
+            <div>
+                {% block content %}
+                {% endblock %}
+                <div class="footer">
+                    <div class="pure-menu pure-menu-horizontal pure-menu-open">
+                        <ul>
+                            <li><a href="http://andrewliu.tk/about/">About Me</a></li>
+                            <li><a href="http://twitter.com/yuilibrary/">Twitter</a></li>
+                            <li><a href="http://github.com/yahoo/pure/">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
